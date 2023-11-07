@@ -26,7 +26,11 @@ while True:
                 latest_release = game
         print(f"{latest_release['name']} was released most recently")
     elif '3' in choice:
-        pass
+        oldest_release = game_data[0]
+        for game in game_data:
+            if game['release'] < oldest_release['release']:
+                oldest_release = game
+        print(f"{oldest_release['name']} was released the longest ago")
     elif '6' in choice:
         break
     else:
